@@ -187,7 +187,9 @@ nav li a:hover
 
 #hd-cart 
 {
-	background-color: rgb(0, 176, 240);
+	background-color: #eb579c;
+
+	
 }
 
 #hd-cart i{
@@ -195,6 +197,214 @@ nav li a:hover
 	font-size: 20px;
 	margin:3px 2px;
 }
+
+#hd-account
+{
+	background-color: rgb(0, 176, 240);
+}
+
+#hd-account i
+{
+	color:white;
+	font-size: 20px;
+	margin:3px 2px;
+}
+
+.card
+{
+	border:none;
+	border-radius: 20px;
+	background-color: #3786ed;
+	color:white;
+	padding: 8px 16px;
+	box-shadow: 2px 2px 2px 2px #aaaaaa;
+}
+.card:hover 
+{
+	color:white;
+}
+
+.ft-go-up
+{
+	width:100%;
+	height: 35px;
+	padding: 5px;
+	text-align: center;
+	background-color:rgb(233, 233, 233);
+	box-shadow:0 -1px 5px lightgray;
+}
+
+.ft-go-up a
+{
+	display: block;
+	width:100%;
+	text-decoration: none;
+	color:gray;
+	transition:  opacity 0.5s;
+}
+
+.ft-go-up a:hover
+{
+	opacity: 0.5s;
+}
+
+.ft-box
+{
+	width:100%;
+	height: auto;
+	background-color: #ECEFF1;
+	padding: 50px;
+}
+
+.ft-columns
+{
+	width:100%;
+	display:flex;
+	direction: rtl;
+	text-align: right;
+}
+
+.ft-columns div 
+{
+	flex:1;
+	padding: 20px;
+	padding-top: 0;
+	padding-right: 50px;
+}
+
+.ft-columns-title 
+{
+	list-style-type: disc;
+	padding-bottom:10px;
+	font-size: 20px;
+	font-weight: bold;
+	color:black;
+}
+
+.ft-columns p,a,li 
+{
+	color:rgb(87, 87, 87);
+	list-style-type: square;
+	font-size: 14px;
+}
+
+.ft-logos
+{
+	text-align: left;
+	direction: rtl;
+	width: 100%;
+	padding: 50px;
+	padding-top: 20px;
+	border: none !important;
+}
+
+.ft-logos form input 
+{
+	display: inline-block;
+	width:200px;
+	padding: 5px;
+	border: none;
+	box-shadow: 1px 1px 10px rgb(175, 175, 175);
+	border-radius: 5px;
+}
+
+.ft-logos form button 
+{
+	padding: 5px;
+	border: none;
+	box-shadow: 1px 1px 10px rgb(175, 175, 175);
+	border-radius: 5px;
+	background-color: #3786ed;
+	color: white;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.ft-logos form p 
+{
+	font-weight: bold;
+}
+
+.ft-logos form *:focus 
+{
+	outline: none;
+}
+
+.ft-logos div 
+{
+	margin-top: 10px;
+	display: flex;
+	width: 100%;
+	padding: 0;
+}
+
+.ft-logos div a 
+{
+	flex: 1;
+	display: block;
+	margin: 2px;
+	padding: 20px;
+	background-color: #fafafa;
+	box-shadow: 1px 1px 5px rgb(190, 190, 190);
+	border-radius: 5px;
+}
+
+.ft-logos div a img 
+{
+	width:100%;
+	height: 100%;
+}
+
+.ft-copyright 
+{
+	display: block;
+	width: 100%;
+	padding: 5px;
+	background-color:rgb(175, 175, 175);
+	text-align: right;
+	color: rgb(61, 61, 61);
+}
+
+.ft-copyright p
+{
+	margin: 0;
+	margin-right: 85px;
+	font-size: 13px;
+}
+
+.ft-description p
+{
+font-size: 13px;
+}
+
+.ft-columns-header
+{
+	list-style-type: disc;
+	padding-bottom:10px;
+	font-size: 20px;
+	font-weight: bold;
+	color:black;
+	direction: rtl;
+	display: flex;
+	direction: rtl;
+}
+
+.title h4
+{
+	list-style-type: disc;
+	font-size: 18px;
+	display: flex;
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
 
 
 
