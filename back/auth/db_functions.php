@@ -1,6 +1,7 @@
 <?php
 
 require "../config.php";
+require "./functions.php";
 
 class database{
 
@@ -23,6 +24,25 @@ class database{
         $insert->execute();
         $conn->close();
     }
+
+    public static function select_user($username,$password){
+        $conn = self::connect();
+        $select = $conn->prepare("SELECT * FROM users WHERE username=?");
+        $select->bind_param("i",$username);
+        $result = $select->execute();
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                if(auth::password_hash_check($password,$row['password'])){
+                    return $row;
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
+
 
 }
 
