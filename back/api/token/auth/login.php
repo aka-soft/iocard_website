@@ -4,20 +4,10 @@
 
 //---- Requires ----
 require "./../header.php";
-require "./../../db.php";
+require "functions.php";
 
-//---- function ----
-function password_hash_check($password,$hash){
-    if(crypt($password,$hash) == $hash){
-        return true;
-    }
-    return false;
-}
 
-function input_validation($password){
-    return true;
-}
-
+//---- Main script ----
 
 if(isset($_POST['email']) && isset($_POST['password'])){
     $email = $_POST['email'];
@@ -26,18 +16,40 @@ if(isset($_POST['email']) && isset($_POST['password'])){
         $user = auth_db::selectUserByEmail($email);
         if($user != false){
             if(password_hash_check($password,$user['password'])){
-                $result = [
-                    'result' => [
-                        'confirmed' => true,
-                        'username' => $user['username'],
-                        'token' => $user['token']
-                    ]
-                ];
+                $ip = $_SERVER['REMOTE_ADDR'];
+                if(!auth_db::if_ip_existed($ip)){
+                    $token = generate_token();
+                    $now_date = getdate();
+                    
+                    $array = [
+                        'token' => $token,
+                        'id' => $user['id'],
+                        'ip' => $ip,
+                        'created_date' => $now_date['mon']. "/" . $now_date['mday'] . " - " . $now_date['hours'] . ":" . $now_date['seconds']
+                    ];
+                    if(auth_db::enter_into_logged_in($array) != false){
+                        $result = [
+                            'result' => [
+                                'done' => true,
+                                'username' => $user['username'],
+                                'token' => $token
+                            ]
+                        ];
+                    }
+                }
+                else{
+                    $result = [
+                        'result' => [
+                            'done' => false,
+                            'error' => "this ip is logged in"
+                        ]
+                    ];
+                }
             }
             else{
                 $result = [
                     'result' => [
-                        'confirmed' => false,
+                        'done' => false,
                         'error' => "ایمیل یا کلمه عبور اشتباه وارد شده است"
                     ]
                 ];
@@ -46,7 +58,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
         else{
             $result = [
                 'result' => [
-                    'confirmed' => false,
+                    'done' => false,
                     'error' => "ایمیل یا کلمه عبور اشتباه وارد شده است"
                 ]
             ];
@@ -55,7 +67,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     else{
         $result = [
             'result' => [
-                'confirmed' => false,
+                'done' => false,
                 'error' => "استفاده از علائم غیر مجاز"
             ]
         ];
@@ -64,7 +76,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 else{
     $result = [
         'result' => [
-            'confirmed' => false,
+            'done' => false,
             'error' => "No data sent"
         ]
     ];
