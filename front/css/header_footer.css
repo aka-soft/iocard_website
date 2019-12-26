@@ -28,6 +28,7 @@ a{
 {
 	box-sizing: border-box;
 	font-family: Iranyekan;
+	direction: rtl;
 }
 
 
@@ -253,7 +254,7 @@ nav li a:hover
 	width:100%;
 	height: auto;
 	background-color: #ECEFF1;
-	padding: 50px;
+	padding: 50px 130px;
 }
 
 .ft-columns
@@ -262,14 +263,13 @@ nav li a:hover
 	display:flex;
 	direction: rtl;
 	text-align: right;
+	
 }
 
 .ft-columns div 
 {
 	flex:1;
-	padding: 20px;
-	padding-top: 0;
-	padding-right: 50px;
+	padding:0 50px 20px 50px;
 }
 
 .ft-columns-title 
@@ -279,6 +279,7 @@ nav li a:hover
 	font-size: 20px;
 	font-weight: bold;
 	color:black;
+	text-align: right;
 }
 
 .ft-columns p,a,li 
@@ -288,7 +289,7 @@ nav li a:hover
 	font-size: 14px;
 }
 
-.ft-logos
+.ft-newsletter
 {
 	text-align: left;
 	direction: rtl;
@@ -296,19 +297,20 @@ nav li a:hover
 	padding: 50px;
 	padding-top: 20px;
 	border: none !important;
+	text-align: right;
 }
 
-.ft-logos form input 
+.ft-newsletter form input 
 {
 	display: inline-block;
-	width:200px;
+	width:70%;
 	padding: 5px;
 	border: none;
 	box-shadow: 1px 1px 10px rgb(175, 175, 175);
 	border-radius: 5px;
 }
 
-.ft-logos form button 
+.ft-newsletter form button 
 {
 	padding: 5px;
 	border: none;
@@ -318,19 +320,21 @@ nav li a:hover
 	color: white;
 	display: inline-block;
 	margin-top: 10px;
+	width: 25%;
+
 }
 
-.ft-logos form p 
+.ft-newsletter form p 
 {
 	font-weight: bold;
 }
 
-.ft-logos form *:focus 
+.ft-newsletter form *:focus 
 {
 	outline: none;
 }
 
-.ft-logos div 
+.ft-newsletter div 
 {
 	margin-top: 10px;
 	display: flex;
@@ -338,7 +342,7 @@ nav li a:hover
 	padding: 0;
 }
 
-.ft-logos div a 
+.ft-newsletter div a 
 {
 	flex: 1;
 	display: block;
@@ -349,7 +353,7 @@ nav li a:hover
 	border-radius: 5px;
 }
 
-.ft-logos div a img 
+.ft-newsletter div a img 
 {
 	width:100%;
 	height: 100%;
@@ -387,14 +391,29 @@ font-size: 13px;
 	direction: rtl;
 	display: flex;
 	direction: rtl;
+	margin-top:25px;
+	margin-left:15px;
 }
 
-.title h4
+#head
+{
+	padding-right: 0;
+}
+
+
+
+footer .title h4
 {
 	list-style-type: disc;
 	font-size: 18px;
 	display: flex;
 	font-weight: bold;
+	padding:50px;
+}
+
+footer .title 
+{
+	text-align: right;
 }
 
 
