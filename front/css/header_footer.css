@@ -186,6 +186,18 @@ nav li a:hover
 	color:white;
 }
 
+
+.hd-options .card 
+{
+	
+	border:none;
+	border-radius: 20px;
+	background-color: #713ba1;
+	color:white;
+	padding: 7px 14px;
+	
+}
+
 #hd-cart 
 {
 	background-color: #eb579c;
@@ -218,7 +230,7 @@ nav li a:hover
 	background-color: #3786ed;
 	color:white;
 	padding: 8px 16px;
-	box-shadow: 2px 2px 2px 2px #aaaaaa;
+	box-shadow: 2px 2px 2px 2px #e0ddd7;
 }
 .card:hover 
 {
@@ -242,6 +254,14 @@ nav li a:hover
 	text-decoration: none;
 	color:gray;
 	transition:  opacity 0.5s;
+	
+}
+
+.ft-go-up i
+{
+	font-size: 30px;
+	color:#2a77eb;
+	cursor: pointer;
 }
 
 .ft-go-up a:hover
@@ -269,18 +289,37 @@ nav li a:hover
 .ft-columns div 
 {
 	flex:1;
-	padding:0 50px 20px 50px;
+	padding:0 0px 20px 50px;
 }
 
 .ft-columns-title 
 {
-	list-style-type: disc;
+	list-style-type: none;
 	padding-bottom:10px;
 	font-size: 20px;
 	font-weight: bold;
 	color:black;
 	text-align: right;
 }
+
+
+.ft-columns-title i
+{
+	margin-left: 5px;
+	color:#2a77eb;
+}
+
+
+
+
+
+
+
+/* .ft-columns-title::before
+{
+	font-family: "Font Awesome 5 Free";
+	content:"\f105";
+} */
 
 .ft-columns p,a,li 
 {
@@ -383,21 +422,19 @@ font-size: 13px;
 
 .ft-columns-header
 {
-	list-style-type: disc;
+	
 	padding-bottom:10px;
-	font-size: 20px;
-	font-weight: bold;
-	color:black;
-	direction: rtl;
-	display: flex;
+	
+	
+	
+	
 	direction: rtl;
 	margin-top:25px;
-	margin-left:15px;
 }
 
-#head
+footer li 
 {
-	padding-right: 0;
+	list-style-type: none;
 }
 
 
@@ -418,6 +455,81 @@ footer .title
 
 
 
+ footer .ft-box-about
+{
+	flex:2;
+	display: flex;
+	font-size: 15px;
+	font-weight: bolder;
+	list-style-type: disc;
+	
+}
+
+ footer .ft-box-namad 
+{
+	text-align: left;
+	flex:1;
+} 
+
+footer .ft-social-media 
+{
+	text-align: right;
+	flex:2;
+}
+
+.icons-social
+{
+	display: flex;
+	float: left;
+}
+
+.icons-social li 
+{
+	padding:0px 10px;
+}
+
+ .fa-telegram
+{
+	font-size: 30px;
+} 
+
+.fa-telegram:hover 
+{
+	color:#4d9feb;
+}
+
+.fa-instagram
+{
+	font-size: 30px;
+}
+
+.fa-instagram:hover 
+{
+	color:#f06846
+}
+
+
+
+
+.fa-linkedin
+{
+	font-size: 30px;
+}
+
+.fa-linkedin:hover 
+{
+	color:#325dba;
+}
+
+.fa-whatsapp
+{
+	font-size: 30px;
+}
+
+.fa-whatsapp:hover 
+{
+	color:#69f75c;
+}
 
 
 
