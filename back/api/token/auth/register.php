@@ -17,7 +17,7 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['email
     $email = $_POST['email'];
 
     if(input_validation($username) && input_validation($password)){
-        if(!auth_db::if_email_existed($email)){
+        if(!auth_db::if_email_existed('users',$email)){
             if(!auth_db::if_username_existed($username)){
                 $token = generate_token();
                 $hashed_password = password_encryption($password);
@@ -38,7 +38,7 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['email
                 auth_db::enter_user($data);
                 $done = true;
                 $message = "User registered";
-                send_activation_email($token,$email);
+                //send_activation_email($token,$email);
             }
             else{
                 $done = false;

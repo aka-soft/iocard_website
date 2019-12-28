@@ -13,19 +13,17 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
     if(input_validation($email) && input_validation($password)){
-        $user = auth_db::selectUserByEmail($email);
+        $user = auth_db::selectUserBy('email',$email);
         if($user != false){
             if(password_hash_check($password,$user['password'])){
                 $ip = $_SERVER['REMOTE_ADDR'];
                 if(!auth_db::if_ip_existed($ip)){
                     $token = generate_token();
-                    $now_date = getdate();
-                    
                     $array = [
                         'token' => $token,
                         'id' => $user['id'],
                         'ip' => $ip,
-                        'created_date' => $now_date['mon']. "/" . $now_date['mday'] . " - " . $now_date['hours'] . ":" . $now_date['seconds']
+                        'created_date' => strtotime('now')
                     ];
                     if(auth_db::enter_into_logged_in($array) != false){
                         $result = [

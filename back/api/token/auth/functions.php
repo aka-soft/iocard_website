@@ -83,4 +83,21 @@ function send_rsp_email($rsp_token,$email){
     mail($to,$subject,$message,$from); 
 }
 
+
+function date_check($type,$date){
+    switch($type){
+        case 'rsp':
+            if(strtotime('now') > ($date+3600)){
+                return false;
+            }
+            return true;
+        break;
+        case 'logged_in':
+            if(strtotime('now') > ($date+86400)){
+                return false;
+            }
+            return true;
+    }
+}
+
 ?>

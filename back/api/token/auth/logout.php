@@ -12,7 +12,7 @@ if(isset($_POST['token'])){
     $token = $_POST['token'];
     $ip = $_SERVER['REMOTE_ADDR'];
     if(checkUserValidation($token,$ip)){
-        if(auth_db::remove_from_logged_in($token)){
+        if(auth_db::delete_from('logged_in','token',$token)){
             $result = [
                 'result' => [
                     'done' => true
