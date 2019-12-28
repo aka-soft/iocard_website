@@ -153,16 +153,17 @@ nav li a:hover
 }
 
 
-/* .nav-drop-down-item:hover .nav-drop-down-box{
+ .nav-drop-down-item:hover .nav-drop-down-box{
 	display: block;
-   } */
+	position: absolute;
+   } 
 
 
 .hd-options
 {
 	float:left;
 	direction: ltr;
-	margin-top: 17px;
+	margin-top: 12px;
 }
 
 .hd-options *
@@ -194,9 +195,22 @@ nav li a:hover
 	border-radius: 20px;
 	background-color: #713ba1;
 	color:white;
-	padding: 7px 14px;
-	
+	padding: 7px 14px;	
 }
+
+/* .card:hover 
+{
+ background-color: white;
+ transition: 0.25s;
+}
+
+.card a:hover
+{
+	color:#1e73d4;
+} */
+
+
+
 
 #hd-cart 
 {
@@ -230,11 +244,24 @@ nav li a:hover
 	background-color: #3786ed;
 	color:white;
 	padding: 8px 16px;
-	box-shadow: 2px 2px 2px 2px #e0ddd7;
+	box-shadow: 1px 1px 5px 3px #e0ddd7;
 }
-.card:hover 
+
+
+#story 
 {
-	color:white;
+	text-align: right;
+}
+
+#story p
+{
+	font-weight: normal;
+}
+
+#story h4 i
+{
+	color:#2a77eb;
+	margin-left: 3px;
 }
 
 .ft-go-up
@@ -458,7 +485,6 @@ footer .title
  footer .ft-box-about
 {
 	flex:2;
-	display: flex;
 	font-size: 15px;
 	font-weight: bolder;
 	list-style-type: disc;
@@ -477,10 +503,17 @@ footer .ft-social-media
 	flex:2;
 }
 
+.ft-social-media h4 i
+{
+	color:#3786ed;
+	margin-left: 3px;
+}
+
 .icons-social
 {
 	display: flex;
 	float: left;
+	cursor: pointer;
 }
 
 .icons-social li 
@@ -496,6 +529,7 @@ footer .ft-social-media
 .fa-telegram:hover 
 {
 	color:#4d9feb;
+	transition: 0.25s;
 }
 
 .fa-instagram
@@ -505,7 +539,8 @@ footer .ft-social-media
 
 .fa-instagram:hover 
 {
-	color:#f06846
+	color:#f06846;
+	transition: 0.25s;
 }
 
 
@@ -519,6 +554,7 @@ footer .ft-social-media
 .fa-linkedin:hover 
 {
 	color:#325dba;
+	transition: 0.25s;
 }
 
 .fa-whatsapp
@@ -529,7 +565,27 @@ footer .ft-social-media
 .fa-whatsapp:hover 
 {
 	color:#69f75c;
+	transition: 0.25s;
 }
+
+@media only screen and (max-width:700px)
+{
+	.ft-columns{
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		direction: rtl;
+		text-align: right;
+	   }
+	   
+	   .ft-columns div{
+		flex: 2;
+		flex-basis: 10%;
+		padding: 20px;
+		padding-top: 0;
+		padding-right: 50px;
+	   }
+} 
 
 
 
