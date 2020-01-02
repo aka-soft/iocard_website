@@ -18,6 +18,10 @@
     font-style: normal;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 
 a {
     color: inherit;
@@ -41,7 +45,8 @@ a:hover {
 .hd-box {
     direction: rtl;
     width: 100%;
-    padding: 10px 8%;
+    padding: 10px 13%;
+    padding-bottom: 15px;
     text-align: right;
     box-shadow: 1px 1px 1px lightgrey;
 }
@@ -156,7 +161,7 @@ nav li a:hover {
     border-radius: 50%;
     padding: 0px 4px;
     background-color: #ff4747;
-    box-shadow: 1px 1px 5px black;
+    /* box-shadow: 1px 1px 5px black; */
     transition: opacity 0.5s;
 }
 
@@ -176,18 +181,14 @@ nav li a:hover {
     padding: 7px 14px;
 }
 
-/* .card:hover 
+
+.card:hover
 {
- background-color: white;
- transition: 0.25s;
+    color: #3786ed;
+    background-color: white;
+    transition: 0.25s;
+    border: 1px solid lightgray;    
 }
-
-.card a:hover
-{
-	color:#1e73d4;
-} */
-
-
 
 
 #hd-cart {
@@ -218,7 +219,7 @@ nav li a:hover {
     background-color: #3786ed;
     color: white;
     padding: 8px 16px;
-    box-shadow: 1px 1px 5px 3px #e0ddd7;
+    /* box-shadow: 1px 1px 5px 3px #e0ddd7; */
     width:auto !important;
 }
 
@@ -251,8 +252,10 @@ nav li a:hover {
     text-decoration: none;
     color: gray;
     transition: opacity 0.5s;
-
 }
+
+
+
 
 .ft-go-up i {
     font-size: 30px;
@@ -262,13 +265,14 @@ nav li a:hover {
 
 .ft-go-up a:hover {
     opacity: 0.5s;
+    
 }
 
 .ft-box {
     width: 100%;
     height: auto;
     background-color: #ECEFF1;
-    padding: 50px 130px;
+    padding: 50px 13%;
 }
 
 .ft-columns {
@@ -284,6 +288,8 @@ nav li a:hover {
     padding: 0 0px 20px 50px;
 }
 
+
+
 .ft-columns-title {
     list-style-type: none;
     padding-bottom: 10px;
@@ -292,6 +298,12 @@ nav li a:hover {
     color: black;
     text-align: right;
 }
+
+.ft-columns-title a:hover 
+{
+    color:red;
+}
+
 
 
 .ft-columns-title i {
@@ -350,6 +362,7 @@ li {
     width: 25%;
 
 }
+
 
 .ft-newsletter form p {
     font-weight: bold;
@@ -432,7 +445,7 @@ footer .title {
 
 
 footer .ft-box-about {
-    flex: 2;
+    display: flex;
     font-size: 15px;
     font-weight: bolder;
     list-style-type: disc;
@@ -442,7 +455,34 @@ footer .ft-box-about {
 footer .ft-box-namad {
     text-align: left;
     flex: 1;
+    display: flex;
+    padding:10px 50px 0 10px;
 }
+
+footer .ft-box-namad a{
+    flex: 1;
+    margin:5px;
+    display: block;
+    border-radius: 50%;
+    border:1px solid rgb(211, 211, 211);
+    background-color: rgb(243, 243, 243);
+    box-shadow: 1px 1px 3px gray;
+    padding: 10px;
+    align-content: center;
+    transition: box-shadow 1s;
+}
+
+footer .ft-box-namad a:hover{
+    box-shadow: 4px 4px 15px gray;
+}
+
+footer .ft-box-namad a img{
+    display: block;
+    margin: auto;
+    width:72px;
+    padding: 0px;
+}
+
 
 footer .ft-social-media {
     text-align: right;
@@ -532,6 +572,15 @@ footer .ft-social-media {
     cursor: pointer;
     position: absolute;
 }
+
+.ft-cl li a:hover 
+{
+    color:#3786ed;
+    margin-right: 3px;
+    transition: 0.25s;
+}
+
+
 
 
 @media only screen and (max-width: 1060px) {
