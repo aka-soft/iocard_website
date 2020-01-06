@@ -1,0 +1,105 @@
+
+*{
+  box-sizing: border-box;
+}
+
+.mom
+{
+  display: flex;
+}
+
+
+body{
+  background-size: cover;
+  font-family: Iranyekan;
+}
+
+
+.auth-form-box{
+
+  background-color: white;
+  box-shadow: 2px 1px 4px 1px lightgrey;
+  border-radius: 5px;
+  height: 220px;
+  width: 360px;
+  margin-right: 250px;
+
+}
+
+.auth-form-box .title
+{
+  text-align: center;
+  background-color: #ffd240;
+  height: 50px;
+  border-radius: 5px 5px 0 0;
+  color:white;
+
+}
+
+
+
+
+
+/*second box styles*/
+
+
+
+.auth-form-boxes{
+  background-color: white;
+  box-shadow: 2px 1px 1px 1px lightgrey;
+  border-radius: 5px;
+  height: 220px;
+  width: 360px;
+  margin-right: 250px;
+}
+
+.auth-form-boxes .title{
+  text-align: center;
+  background-color: #19cf37;
+  height: 50px;
+  border-radius: 5px 5px 0 0;
+  color:white;
+}
+
+#t1
+{
+  margin-right: 15px;
+}
+
+#t2
+{
+  margin-right: 15px;
+}
+
+#t3
+{
+  margin-right: 15px;
+}
+
+.space
+{
+  height: 20px;
+}
+
+
+.card-form-boxes
+{
+  background-color: white;
+  box-shadow: 2px 1px 4px lightgrey;
+  border-radius: 5px;
+  height: 220px;
+  width: 970px;
+  margin-right: 250px;
+  margin-top:30px;
+}
+
+.card-form-boxes .title
+{
+  text-align: center;
+  background-color: #3e4763;
+  height: 50px;
+  border-radius: 5px 5px 0 0;
+  color:white;
+}
+
+
