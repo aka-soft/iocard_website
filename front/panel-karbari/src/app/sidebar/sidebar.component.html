@@ -1,0 +1,20 @@
+<div class="sidebar iransans">
+  <div class="profile">
+    <div class="pattern"></div>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa3RGSBoZq1cO67ZrL2IoVXHt0CcXSwctZ8-hovYb1u9w-CWg_6w&s" >
+  </div>
+  <div class="menu" id="menu">
+    <ul>
+      <li *ngFor="let menu of sortMenu(menus)" [ngClass]="{open:menu.isopen,active:menu.active}">
+        <a    [routerLink]= "  menu.link==''  ? null : menu.link" [ngClass]="menu.children.length > 0 ? 'menu-toggle' : ''" (click)="toggleMenu(menu)">
+          <i [ngClass]="menu.icon"></i><span>{{menu.name}}</span>
+        </a>
+        <ul *ngIf="menu.children.length > 0">
+          <li *ngFor="let child of sortMenu(menu.children)">
+            <a [routerLink]= " child.link==''  ? null : child.link"><i *ngIf="child.icon" [ngClass]="child.icon"></i><span>{{child.name}}</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

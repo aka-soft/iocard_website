@@ -32,17 +32,21 @@ import {
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ToolbarComponent,
-    ErrorpageComponent
+    ErrorpageComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,

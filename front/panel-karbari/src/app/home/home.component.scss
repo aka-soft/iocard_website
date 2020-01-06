@@ -1,11 +1,13 @@
 
 *{
   box-sizing: border-box;
+
 }
 
 .mom
 {
   display: flex;
+
 }
 
 
@@ -22,7 +24,8 @@ body{
   border-radius: 5px;
   height: 220px;
   width: 360px;
-  margin-right: 250px;
+  margin-left:20px;
+  // margin-right: 250px;
 
 }
 
@@ -50,7 +53,7 @@ body{
   border-radius: 5px;
   height: 220px;
   width: 360px;
-  margin-right: 250px;
+  // margin-right: 250px;
 }
 
 .auth-form-boxes .title{
@@ -82,14 +85,15 @@ body{
 }
 
 
+
+
 .card-form-boxes
 {
   background-color: white;
   box-shadow: 2px 1px 4px lightgrey;
   border-radius: 5px;
   height: 220px;
-  width: 970px;
-  margin-right: 250px;
+  width: 740px;
   margin-top:30px;
 }
 
@@ -101,5 +105,34 @@ body{
   border-radius: 5px 5px 0 0;
   color:white;
 }
+
+
+
+
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-radio-group {
+  display: block;
+  border: 1px solid #555;
+  margin: 20px;
+  padding: 80px;
+}
+
+.mat-card
+{
+  margin-left:30px;
+
+}
+
+
+
+
+
 
 
