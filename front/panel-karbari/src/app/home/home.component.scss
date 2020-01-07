@@ -1,7 +1,7 @@
 
 *{
   box-sizing: border-box;
-
+  font-family: Iranyekan;
 }
 
 .mom
@@ -13,7 +13,7 @@
 
 body{
   background-size: cover;
-  font-family: Iranyekan;
+
 }
 
 
@@ -36,7 +36,14 @@ body{
   height: 50px;
   border-radius: 5px 5px 0 0;
   color:white;
+}
 
+.title h4{
+  margin-right: 10px;
+}
+
+.title h2{
+  margin-right: 10px;
 }
 
 

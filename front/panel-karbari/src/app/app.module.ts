@@ -34,6 +34,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import {RouterModule} from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { DialogDataExampleDialogComponent } from './dialog-data-example-dialog/dialog-data-example-dialog.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import {RouterModule} from '@angular/router';
     HomeComponent,
     ToolbarComponent,
     ErrorpageComponent,
-    SidebarComponent
+    SidebarComponent,
+    LoginComponent,
+    RegisterComponent,
+    DialogDataExampleDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +77,9 @@ import {RouterModule} from '@angular/router';
     ReactiveFormsModule,
     FlexLayoutModule,
     HttpClientModule
+  ],
+  entryComponents: [
+    DialogDataExampleDialogComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
