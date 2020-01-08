@@ -5,24 +5,27 @@
 //---- Requires ----
 require "./../header.php";
 require "functions.php";
-
+require_once "response_codes.php";
 
 //---- Main script ----
 if(isset($_POST['token'])){
     $token = $_POST['token'];
     $ip = $_SERVER['REMOTE_ADDR'];
-    if(checkUserValidation($token,$ip)){
+    if(auth_functions::checkUserValidation($token,$ip)){
         if(auth_db::delete_from('logged_in','token',$token)){
             $result = [
                 'result' => [
-                    'done' => true
+                    'done' => true,
+                    'code' => $response_codes['DONE']
                 ]
             ];
         }
         else{
             $result = [
                 'result' => [
-                    'done' => false
+                    'done' => false,
+                    'message' => "DATABASE ERROR",
+                    'code' => $response_codes['DB_ERROR']
                 ]
             ];
         }
@@ -31,7 +34,8 @@ if(isset($_POST['token'])){
         $result = [
             'result' => [
                 'done' => false,
-                'error' => 'IP is not same'
+                'message' => 'NOT LOGGED IN',
+                'code' => $response_codes['NOT_LOGGED_IN']
             ]
         ];
     }

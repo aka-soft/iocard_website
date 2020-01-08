@@ -5,20 +5,20 @@
 //---- Requires ----
 require "./../header.php";
 require "functions.php";
-
+require_once "response_codes.php";
 
 //---- Main script ----
 
 if(isset($_POST['email']) && isset($_POST['password'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
-    if(input_validation($email) && input_validation($password)){
+    if(auth_functions::input_validation($email) && auth_functions::input_validation($password)){
         $user = auth_db::selectUserBy('email',$email);
         if($user != false){
-            if(password_hash_check($password,$user['password'])){
+            if(auth_functions::password_hash_check($password,$user['password'])){
                 $ip = $_SERVER['REMOTE_ADDR'];
                 if(!auth_db::if_ip_existed($ip)){
-                    $token = generate_token();
+                    $token = auth_functions::generate_token();
                     $array = [
                         'token' => $token,
                         'id' => $user['id'],
@@ -30,7 +30,8 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                             'result' => [
                                 'done' => true,
                                 'username' => $user['username'],
-                                'token' => $token
+                                'token' => $token,
+                                'code' => $response_codes['DONE']
                             ]
                         ];
                     }
@@ -39,7 +40,8 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                     $result = [
                         'result' => [
                             'done' => false,
-                            'error' => "this ip is logged in"
+                            'message' => "IP EXISTS",
+                            'code' => $response_codes['IP_EXISTS']
                         ]
                     ];
                 }
@@ -48,7 +50,8 @@ if(isset($_POST['email']) && isset($_POST['password'])){
                 $result = [
                     'result' => [
                         'done' => false,
-                        'error' => "ایمیل یا کلمه عبور اشتباه وارد شده است"
+                        'message' => "WRONG ACCESS INFO",
+                        'code' => $response_codes['WRONG_ACCESS_INFO']
                     ]
                 ];
             }
@@ -57,7 +60,8 @@ if(isset($_POST['email']) && isset($_POST['password'])){
             $result = [
                 'result' => [
                     'done' => false,
-                    'error' => "ایمیل یا کلمه عبور اشتباه وارد شده است"
+                    'message' => "WRONG ACCESS INFO",
+                    'code' => $response_codes['WRONG_ACCESS_INFO']
                 ]
             ];
         }
@@ -66,7 +70,8 @@ if(isset($_POST['email']) && isset($_POST['password'])){
         $result = [
             'result' => [
                 'done' => false,
-                'error' => "استفاده از علائم غیر مجاز"
+                'message' => "ILLEGAL CHARACTERS",
+                'code' => $response_codes['ILLEGAL_CHARS']
             ]
         ];
     }
@@ -75,7 +80,8 @@ else{
     $result = [
         'result' => [
             'done' => false,
-            'error' => "No data sent"
+            'message' => "DATA NOT COMPLETE",
+            'code' => $response_codes['DATA_NOT_COMPLETE']
         ]
     ];
 }

@@ -7,7 +7,7 @@ $token = $_GET['rsp_token'];
 $result = auth_db::select_from_rsp_token($token,$email);
 
 if($result){
-    if(date_check('rsp',$result['created_date'])){
+    if(auth_functions::date_check('rsp',$result['created_date'])){
         $result = [
             "result" => [
                 'done' => true
