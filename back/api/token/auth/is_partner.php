@@ -1,34 +1,22 @@
 <?php
 
-//Getting partner customers
+//---- Checks if user is partner ----
 //---- Requires ----
 require "./functions.php";
-require_once "./../header.php";
 require_once "./response_codes.php";
+require_once "./../header.php";
 
-//---- Main Script -----
+//---- Main Script ----
 $logged_in_token = $_POST['token'];
 if(auth_functions::logged_in($logged_in_token)){
     if(auth_functions::is_partner($logged_in_token)){
-        $orders = auth_db::select_partner_orders($logged_in_token);
-        if($orders !== false){
-            $result = [
-                "result" => [
-                    "done" => true,
-                    "orders" => $orders,
-                    "code" => $response_codes['DONE']
-                ]
-            ];
-        }
-        else{
-            $result = [
-                "result" => [
-                    "done" => false,
-                    "message" => "DATABASE ERROR",
-                    "code" => $response_codes['DB_ERROR']
-                ]
-            ];
-        }
+        $result = [
+            "result" => [
+                "done" => true,
+                "message" => "USER IS PARTNER",
+                "code" => $response_codes['DONE']
+            ]
+        ];
     }
     else{
         $result = [

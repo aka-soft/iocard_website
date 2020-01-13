@@ -78,7 +78,7 @@ class auth_functions{
         $from = "YOUR EMAIL ADDRESS";
         $subject = "تغییر کلمه عبور";
         $message = "کاربر عزیز! جهت تغییر کلمه عبور خود بر روی لینک زیر کلیک کنید و اگر این پیام به درخواست شما ارسال نشده است آن را نادیده بگیرید";
-        $message .= "<br><br>https://iocard.ir/account/rsp.php?token=$rsp_token&&email=$email";
+        $message .= "<br><br>https://iocard.ir/account/rsp.php?token=$rsp_token&email=$email";
         mail($to,$subject,$message,$from); 
     }
     
@@ -108,9 +108,23 @@ class auth_functions{
 
     public static function logged_in($token){
         $logged_in_token = $token;
+        if(!self::checkUserValidation($logged_in_token,$_SERVER['REMOTE_ADDR'])){
+            return false;
+        }
         $user = auth_db::selectUserByToken($logged_in_token);
-        if($user !== false){
-            return true;
+        $rsp_row = auth_db::select_from_rsp_token($logged_in_token,$user['email']);
+        if($rsp_row !== false){
+            $date = $rsp_row['created_date'];
+            if(self::date_check("logged_in",$date)){
+                if($user !== false){
+                    if($user['is_active']){
+                        return true;
+                    }
+                    return false;
+                }
+                return false;
+            }
+            return false;
         }
         return false;
     }
@@ -146,6 +160,17 @@ class auth_functions{
                 }
                 return false;
             break;
+            case "user_info":
+                if(self::CheckPicValidation($file)){
+                    $upload_file = $base_dir . "/users/" . basename($file['name']);
+                    if(move_uploaded_file($file['tmp_name'],$upload_file)){
+                        return $upload_file;
+                    }
+                    else{
+                        return false;
+                    }
+                }
+                return false;
         }
     }
 
@@ -160,8 +185,5 @@ class auth_functions{
         return false;
     }
 }
-
-
-
 
 ?>

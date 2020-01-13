@@ -10,7 +10,6 @@ require_once "response_codes.php";
 $email = $_POST['email'];
 $password = $_POST['password'];
 $result = auth_db::select_from_rsp_token($token,$email);
-
 $hashed_password = auth_functions::password_encryption($password);
 if(auth_db::reset_password($email,$password)){
     $result = [

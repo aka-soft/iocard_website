@@ -18,6 +18,7 @@ if(auth_functions::logged_in($logged_in_token)){
     $date = getdate();
     $now_date = $date['year'] . "/" . $date['mon'] . "/" . $date['mday'];
     if(isset($_FILES['userfile'])){
+        
         $pic = auth_functions::savePic("support",$_FILES['userfile']);
     }
     if($pic !== false){

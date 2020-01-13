@@ -14,7 +14,8 @@ $response_codes = [
     "EMAIL_NOT_FOUND" => 110,
     "UPLOAD_PROB" => 111,
     "TICKET_NOT_FOUND" => 112,
-    "NOT_PARTNER" => 113
-]
+    "NOT_PARTNER" => 113,
+    "IS_PARTNER" => 114
+];
 
 ?>

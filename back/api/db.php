@@ -37,8 +37,13 @@ class auth_db{
         $conn = self::connect();
         $insert = $conn->prepare("INSERT INTO users (username,email,password,token,is_active,is_partner,partner_code,date) values (?,?,?,?,?,?,?,?)");
         $insert->bind_param("ssssssss",$data['username'],$data['email'],$data['password'],$data['token'],$data['is_active'],$data['is_partner'],$data['partner_code'],$data['date']);
-        $insert->execute();
+        $result = $insert->execute();
+        if($result){
+            $conn->close();
+            return true;
+        }
         $conn->close();
+        return false;
     }
 
     //Inserts into logged_in table
@@ -51,9 +56,8 @@ class auth_db{
             return true;
         }
         else{
-            $error = $conn->error;
             $conn->close();
-            return $error;
+            return false;
         }
     }
 
@@ -62,8 +66,12 @@ class auth_db{
         $conn = self::connect();
         $insert = $conn->prepare("INSERT INTO rsp_token(rsp_token,email,created_date) VALUES (?,?,?)");
         $insert->bind_param("sss",$data['rsp_token'],$data['email'],$data['created_date']);
-        $insert->execute();
+        $result = $insert->execute();
         $conn->close();
+        if($result){
+            return true;
+        }
+        return false;
     }
 
 
@@ -79,6 +87,18 @@ class auth_db{
         return false;
     }
 
+
+    public static function enter_user_info($data){
+        $conn = self::connect();
+        $insert = $conn->prepare("INSERT INTO users_info(user_id,national_code,zip_code,email,first_name,last_name,nickname,country,city,address,phone,mobile,map_cordinates,job,photo,about_me,website,social_media) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $insert->bind_param("isssssssssiissssss",$data['user_id'],$data['national_code'],$data['zip_code'],$data['email'],$data['first_name'],$data['last_name'],$data['nickname'],$data['country'],$data['city'],$data['address'],$data['phone'],$data['mobile'],$data['map_cordinates'],$data['job'],$data['photo'],$data['about_me'],$data['website'],$data[['social_media']]);
+        $result = $insert->execute();
+        $conn->close();
+        if($result){
+            return true;
+        }
+        return false;
+    }
 
     //-------- Validation Checks --------
     //Checks if email exists
@@ -144,6 +164,8 @@ class auth_db{
                 return false;
             }
         }
+        $conn->close();
+        return false;
     }
 
     //Checks if user token exists
@@ -152,8 +174,10 @@ class auth_db{
         $query = "SELECT * FROM users WHERE token='$user_token'";
         $result = $conn->query($query);
         if($result->num_rows > 0){
+            $conn->close();
             return true;
         }
+        $conn->close();
         return false;
     }
 
@@ -177,16 +201,19 @@ class auth_db{
                         'partner_code' => $row['partner_code'],
                         'date' => $row['date']
                     ];
+                    $conn->close();
                     return $array;
                 }
             }
             else{
+                $conn->close();
                 return false;
             }
         }
         else{
             print $conn->error;
             $conn->close();
+            return false;
         }
     }
 
@@ -241,12 +268,18 @@ class auth_db{
                     return $row;
                 }
                 else{
+                    $conn->close();
                     return false;
                 }
             }
             else{
+                $conn->close();
                 return false;
             }
+        }
+        else{
+            $conn->close();
+            return false;
         }
         
     }
@@ -290,7 +323,8 @@ class auth_db{
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
                 $product_id = $row['product_id'];
-                $product = iocard_database::select_product($product_id);
+                $iocard_db = new iocard_database();
+                $product = $iocard_db->select_product($product_id);
                 if($product != false){
                     $product_name = $product['name'];
                     $product_link = "https://iocard.ir/products/.../product.php?id=" . $product_id; 
@@ -370,7 +404,7 @@ class auth_db{
             return $tickets;
         }
         $conn->close();
-        return false;
+        return $tickets;
     }
 
      //Selects a specific ticket
@@ -411,6 +445,8 @@ class auth_db{
                     array_push($ticket["replies"],$array);
                 }
             }
+            $conn->close();
+            return $ticket;
         }
         $conn->close();
         return false;
@@ -433,9 +469,28 @@ class auth_db{
                     array_push($orders,$row);
                 }
             }
+            $conn->close();
             return $orders;
         }
+        $conn->close();
         return false;
+    }
+
+    public static function select_user_info($logged_in_token){
+        $user = self::selectUserByToken($logged_in_token);
+        if($user === false){
+            return false;
+        }
+        $user_id = $user['id'];
+        $conn = self::connect();
+        $query = "SELECT * FROM users_info WHERE user_id='$user_id'";
+        $result = $conn->query($query);
+        if($result->num_rows > 0){
+            $row = $result->fetch_assoc();
+            $conn->close();
+            return $row;
+        }
+        return [];
     }
     
     //---------- Deleting Functions -----------
@@ -443,7 +498,11 @@ class auth_db{
     public static function delete_from($table_name,$filter,$value){
         $conn = self::connect();
         $query = "DELETE FROM $table_name WHERE $filter='$value'";
-        $conn->query($query);
+        $del_result = $conn->query($query);
+        if($del_result === false){
+            $conn->close();
+            return false;
+        }
         $query = "SELECT * FROM $table_name WHERE $filter='$value'";
         $result = $conn->query($query);
         if($result){
@@ -463,8 +522,12 @@ class auth_db{
     public static function set_active($user_token){
         $conn = self::connect();
         $query = "UPDATE users SET is_active=1 WHERE token='$user_token'";
-        $conn->query($query);
+        $result = $conn->query($query);
         $conn->close();
+        if($result){
+            return true;
+        }
+        return false;
     }
 
     //Resets password
@@ -479,6 +542,18 @@ class auth_db{
         }
         $conn->close();
         return false; 
+    }
+
+    public static function update_user_info($data,$user_id){
+        $conn = self::connect();
+        $update = $conn->prepare("UPDATE users_info SET national_code = ?,zip_code = ?,email = ?,first_name = ?,last_name = ?,nickname = ?,country = ?,city = ?,address = ?,phone = ?,mobile = ?,map_cordinates = ?,job = ?,photo = ?,about_me = ?,website = ?,social_media = ?) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $update->bind_param("sssssssssiissssss",$data['national_code'],$data['zip_code'],$data['email'],$data['first_name'],$data['last_name'],$data['nickname'],$data['country'],$data['city'],$data['address'],$data['phone'],$data['mobile'],$data['map_cordinates'],$data['job'],$data['photo'],$data['about_me'],$data['website'],$data[['social_media']]);
+        $result = $update->execute();
+        $conn->close();
+        if($result){
+            return true;
+        }
+        return false;
     }
 
     

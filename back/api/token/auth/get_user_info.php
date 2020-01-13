@@ -1,6 +1,6 @@
 <?php
 
-//Returns user's auth information
+//Returns user information
 //---- Requires ----
 require "./functions.php";
 require_once "./../header.php";
@@ -9,12 +9,12 @@ require_once "./response_codes.php";
 //---- Main Script ----
 $logged_in_token = $_POST['token'];
 if(auth_functions::logged_in($logged_in_token)){
-    $user = auth_db::selectUserByToken($logged_in_token);
-    if($user !== false){
+    $user_info = auth_db::select_user_info($logged_in_token);
+    if($user_info !== false){
         $result = [
             "result" => [
                 "done" => true,
-                "user_data" => $user,
+                "user_info" => $user_info,
                 "code" => $response_codes['DONE']
             ]
         ];
@@ -38,7 +38,5 @@ else{
         ]
     ];
 }
-
-echo json_encode($result);
  
 ?>

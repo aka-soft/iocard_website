@@ -1,6 +1,6 @@
 <?php
 
-//Checks if user is logged in
+//Checks if re$result is logged in
 
 //---- Requires ----
 require "functions.php";
@@ -9,8 +9,8 @@ require_once "response_codes.php";
 
 //---- Main Script ----
 $logged_in_token = $_POST['token'];
-$user = auth_db::selectUserByToken($logged_in_token);
-if($user !== false){
+$result_l = auth_functions::logged_in($logged_in_token);
+if($result_l){
     $result = [
         "result" => [
             "done" => true,

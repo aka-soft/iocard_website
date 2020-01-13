@@ -26,7 +26,7 @@ class iocard_database{
 
     //---- Selection Functions ----
     //Selecting product
-    public static function select_product($id){
+    public function select_product($id){
         $conn = self::connect();
         $query = "SELECT * FROM products WHERE id='$id'";
         $result = $conn->query($query);
