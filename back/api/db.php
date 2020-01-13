@@ -359,7 +359,9 @@ class auth_db{
                     'deliver_zip_code' => $row['deliver_zip_code'],
                     'deliver_mobile' => $row['deliver_mobile'],
                     'deliver_phone' => $row['deliver_phone'],
-                    'quantity' => $row['quantity']
+                    'quantity' => $row['quantity'],
+                    'date' => $row['date'],
+                    'guarantee' => $row['guarantee']
                 ];
                 if(isset($product_link)){
                     $array['product_link'] = $product_link;
