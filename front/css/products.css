@@ -1,0 +1,146 @@
+.content{
+       padding: 20px;
+       direction: rtl;
+       overflow: auto;
+       clear: both;
+   }
+   
+   .sidebar{
+       padding: 20px;
+       border-left: 1px solid rgb(230, 230, 230);
+       float: right;
+       direction: rtl;
+       text-align: right;
+   }
+   
+   .products-box{
+       padding: 20px;
+       float: right;
+       align-content: center;
+       display: flex;
+       flex-wrap: wrap;
+       border-collapse: collapse;
+   }
+   
+   
+   .sidebar-title{
+       display: block;
+       color: rgb(0, 176, 240);
+       direction: rtl;
+       margin-bottom: 20px;
+   }
+   
+   .sidebar-title::before{
+       font-family: "Material Icons";
+       content: "\e86c";
+       display: inline-block;
+       margin-left: 5px;
+       position: relative;
+       top:5px;
+   }
+   
+   .sidebar-title::after{
+       font-family: "Material Icons";
+       content: "\e5db";
+       float: left;
+       position: relative;
+       top: 5px;
+   }
+   
+   .sidebar .cat-box a{
+       display: block;
+       padding: 10px;
+       border-bottom: 1px solid rgb(230, 230, 230);
+       transition: background-color 0.25s;
+   }
+   
+   .sidebar .cat-box a:hover{
+       color: white;
+       background-color: rgb(0, 176, 240);
+   }
+   
+   .products-box>h3{
+       display: block;
+       width: 100%;
+       text-align: right;
+       margin: 20px 10px;
+   }
+   
+   .products-box .product{
+       display: block;
+       width: 23.5%;
+       margin: 5px;
+       border: 1px solid rgb(230, 230, 230);
+       text-align: right;
+       transition: opacity 0.5s;
+   }
+   
+   .products-box .product:hover{
+       opacity: 0.7;
+   }
+   
+   .product img{
+       width: 100%;
+   }
+   
+   .product-details{
+       padding: 10px;
+   }
+   
+   .product-rating{
+       text-align: left;
+       direction: ltr;
+   }
+   
+   .product-details i{
+       color: gold;
+       font-size: 14px;
+       margin: 0;
+   }
+   
+   .product-time span{
+       font-weight: bold;
+       color: rgb(0, 0, 187);
+       font-size: 14px;
+   }
+   
+   .price-box{
+       position: relative;
+       bottom: 0;
+       text-align: left;
+   }
+   
+   .price-box .off-price{
+       color:red;
+       text-decoration: line-through;
+       font-size: 14px;
+       margin:0;
+   }
+   
+   .price-box .price{
+       color:green;
+       font-size: 18px;
+       margin:0;
+   }
+   
+   @media only screen and (max-width:900px){
+       .content{
+           direction: ltr;
+       }
+   }
+   
+   @media only screen and (max-width:700px){
+       .products-box{
+           display: block;
+           flex-wrap: unset;
+       }
+   
+       .products-box .product{
+           display: block;
+           width: 100% !important;
+           margin: 5px;
+           border: 1px solid rgb(230, 230, 230);
+           text-align: right;
+           transition: opacity 0.5s;
+       }
+   }
