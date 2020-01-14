@@ -8,9 +8,12 @@ import { DialogData } from '../toolbar/toolbar.component';
   styleUrls: ['./dialog-data-example-dialog.component.scss']
 })
 export class DialogDataExampleDialogComponent {
+  dialogRef: any;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
-
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 
 }
