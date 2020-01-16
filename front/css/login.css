@@ -18,6 +18,10 @@
        box-sizing: border-box;
    }
    
+
+   ul#errors {
+    color: red;
+  }
    
    body{
        background-image: url('./../images/bg.png');

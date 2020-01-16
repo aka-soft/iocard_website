@@ -8,3 +8,4 @@ $(document).ready(function(){
 		$('.navopener .fa-bars').toggleClass('fa-window-close');
 	});
 });
+

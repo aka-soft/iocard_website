@@ -12,9 +12,10 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" type="text/css" href="css/login.css"/>
-        
+        <script src="js/form-validator.js"></script>
     </head>
     <body>
+        <div id="error"></div>
         <div class="auth-form-box">
             <h4>ورود اعضا</h4>
             <a class="google-auth" href="#">ورود از طریق گوگل</a>
@@ -23,14 +24,16 @@
                 <h4>یا</h4>
                 <div class="right"></div>
             </div>
+
             <form>
-                <input name="username" type="text" placeholder="نام کاربری یا ایمیل ..."/>
-                <input name="password" type="password" placeholder="کلمه عبور ..."/>
+                <input id="name" name="email type="email" placeholder="نام کاربری یا ایمیل ..." required="email" maxlength="20" minlength="8" data-ok="emailDe">
+                <input id="password" name="password" type="password" placeholder="کلمه عبور ..." required="password" maxlength="20" minlength="15">
                 <div>
                     <input type="checkbox" name="remember" value="true"/>
                     <p>مرا به خاطر بسپار</p>
                 </div>
                 <button type="submit">ورود</button>
+                <ul id="errors"></ul>
             </form>
             <p class="switch-link">عضو نیستید؟ <a href="register.html">عضویت</a></p>
         </div>
