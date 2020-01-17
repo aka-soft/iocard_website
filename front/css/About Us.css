@@ -1,0 +1,40 @@
+body{
+       background-color: rgb(249, 249, 249);
+
+   }
+   
+   .content{
+          padding: 20px;
+          direction: rtl;
+          overflow: auto;
+          clear: both;
+          margin:30px auto;
+          width: 74%;
+          background-color: white;
+          border-radius: 15px;
+          box-shadow: 1px 1px 5px lightgray; 
+      }
+      
+      .title h3
+      {
+       text-align: center;
+      }
+   
+      .photo img
+      {
+             width:100%;
+             height: 20%;
+             margin-left:300px;
+             border-radius: 10px;
+             margin-top:20px;
+             padding: 0px 0px;
+      }
+
+      .description h6
+      {
+         display: block;
+         text-align: center;
+         margin-top:30px;
+         padding: 50px;
+      }
+

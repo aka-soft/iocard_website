@@ -11,24 +11,14 @@ body{
        width: 74%;
        background-color: white;
        border-radius: 15px;
-       box-shadow: 1px 1px 5px lightgray; 
-       background: url(../images/contact.jpg);
-       
-
+       box-shadow: 1px 1px 5px lightgray;
    }
-   
-  
-   .title h4
-   {
-    float: right;
-   }
-
 
    .contact h6
    {
         display: block;
         text-align: right;
-        margin-top: 60px;
+        margin-top: 20px;
         margin-right: 15px;
    }
 
@@ -42,11 +32,73 @@ body{
    }
 
 
+.divider{
+    width: 70%;
+    display: block;
+    height: 1px;
+    margin:100px auto;
+    margin-top: -30px;
+    background-color: rgb(231, 231, 231);
+}
 
-
-   .contact {
-       margin-top: 90px;
+    h2
+   {
+    text-align: center;
    }
+
+   h5
+   {
+       text-align: right;
+   }
+
+.contact-us{
+    width: 100%;
+    display: flex;
+    padding: 20px;
+}
+
+.contact-us h5{
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.contact-us div{
+    padding: 20px;
+    flex: 1;
+    margin: 10px;
+    direction: rtl;
+}
+
+
+.form-control{
+    margin:10px 5px;
+}
+
+textarea.form-control{
+    height: 250px;
+}
+
+.btn{
+    width: 100%;
+    margin: 5px;
+}
+
+.contact-us div span{
+    font-weight: bold;
+    color: #752b72;
+}
+
+#ways{
+    padding: 50px;
+    padding-top: 20px;
+    border-right: 1px solid rgb(231, 231, 231);
+}
+
+#ways p{
+    padding:0 30px;
+    text-align: right;
+}
+
 
 
 
