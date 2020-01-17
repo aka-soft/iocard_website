@@ -7,7 +7,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script src="js/register.js"></script>
+        <script src="js/registery-validator.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -23,12 +23,12 @@
                 <h4>یا</h4>
                 <div class="right"></div>
             </div>
-            <form>
-                <input name="username" type="text" placeholder="نام کاربری"/>
-                <input name="email" type="email" placeholder="ایمیل"/>
-                <input name="password" type="password" placeholder="کلمه عبور"/>
-                <input name="password-confirm" type="password" placeholder="تکرار کلمه عبور"/>
-                <button type="submit">عضویت</button>
+            <form id="registerForm" action="#">
+                <input id="username" name="username" type="text" placeholder="نام کاربری" />
+                <input id="email" name="email" type="email" placeholder="ایمیل"/>
+                <input id="password" name="password" type="password" placeholder="کلمه عبور" />
+                <input id="passwordConfirm" name="passwordConfirm" type="password" placeholder="تکرار کلمه عبور" />
+                <button id="submitReg" type="submit">عضویت</button>
             </form>
             <p class="switch-link">عضو هستید؟ <a href="login.html">ورود</a></p>
         </div>

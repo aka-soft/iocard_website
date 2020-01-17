@@ -5,9 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Iocard</title>
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <link rel="stylesheet" type="text/css" href="css/style.css"/> -->
     <link rel="stylesheet" type="text/css" href="css/header_footer.css" />
     <link rel="stylesheet" type="text/css" href="css/Home.css"/>
@@ -15,58 +16,33 @@
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="js/blog.js"></script>
-    <script src="js/header.js"></script>
+    <script src="js/header_footer.js"></script>
 </head>
 
 <body>
 
-    <!-- *********************************header********************************************** -->
+    <!-- ****** Header ***** -->
     <header class="hd-box">
         <div class="navopener"><i class="fa fa-bars"></i></div>
         <a href="#" class="logo"><img src="images/logo.png" alt="logo" /></a>
         <nav>
             <li><a href="#">صفحه اصلی</a></li>
-            <li class="nav-drop-down-item"><a href="javascript:void(0)">صفحه محصولات<i class="material-icons">keyboard_arrow_down</i>
-                    <!-- <div class="nav-drop-down-box">
-                <div class="nav-drop-down-container">
-                        <div class="nav-drop-down-column">
-                            <h6><a href="#"><i class="material-icons">keyboard_arrow_left</i>دسته بندی یک</a></h6>
-                            <a href="#">مورد 1</a>
-                            <a href="#">مورد 1</a>
-                            <a href="#">مورد 1</a>
-                        </div>
-                    </div>
-
-                    <div class="nav-drop-down-column">
-                        <h6><a href="#"><i class="material-icons">keyboard_arrow_left</i>دسته بندی یک</a></h6>
-                        <a href="#">مورد 1</a>
-                        <a href="#">مورد 1</a>
-                        <a href="#">مورد 1</a>
-                    </div>
+            <li class="nav-drop-down-item"><a href="#">صفحه محصولات<i class="material-icons">keyboard_arrow_down</i></a>
+                <div class="nav-drop-down">
+                    <a href="#">دسته بندی شماره یک</a>
+                    <a href="#">دسته بندی شماره دو</a>
+                    <a href="#">دسته بندی شماره سه</a>
                 </div>
-
-                <div class="nav-drop-down-column">
-                    <h6><a href="#"><i class="material-icons">keyboard_arrow_left</i>دسته بندی یک</a></h6>
-                    <a href="#">مورد 1</a>
-                    <a href="#">مورد 1</a>
-                    <a href="#">مورد 1</a>
-                </div>
-        </div>
-            </div>-->
-                </a> </li>
-
+            </li>
             <li><a href="#">درباره ما</a></li>
             <li><a href="#">ارتباط با ما</a></li>
-            <li><a class="card" href="#">خرید کارت</a></li>
-
-
-
-
+            <li><a href="#">بلاگ</a></li>
+            <li id="nav-card-buy"><a class="card" href="#">خرید کارت</a></li>
         </nav>
 
         <div class="hd-options">
             <!-- <a href="#" id="hd-cart"><i class="material-icons">shopping_cart</i></a> -->
-            <li><a class="card" href="#"> حساب کاربری</a></li>
+            <li id="auth-item"><a class="card" href="#">حساب کاربری</a></li>
         </div>
     </header>
 
@@ -156,7 +132,7 @@
 
 
 
-<!-- ****************************footer***************************************** -->
+<!-- ***** footer ***** -->
     <footer id="footer">
         <div class="ft-go-up"><a href="#"><i class="fa fa-angle-up"></i></a></div>
         <div class="ft-box">
@@ -193,9 +169,13 @@
 
             <div class="ft-box-about">
 
-                <div id="story">
+                <div class="story">
                     <h4><i class="fa fa-angle-left"></i>درباره آیو کارد</h4>
-                    <p>لورم به متنی آزمایشی فیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بن</p>
+                    <p>
+
+                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
+
+                    </p>
 
                 </div>
 
@@ -214,10 +194,10 @@
 
 
                 <div class="icons-social">
-                    <li><i class="fab fa-whatsapp"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
-                    <li><i class="fab fa-linkedin"></i></li>
-                    <li><i class="fab fa-telegram"></i></li>
+                    <a id="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    <a id="insta"><i class="fab fa-instagram"></i></a>
+                    <a id="linkedin"><i class="fab fa-linkedin"></i></a>
+                    <a id="telegram"><i class="fab fa-telegram"></i></a>
                 </div>
 
             </div>
@@ -227,10 +207,12 @@
     </footer>
 
     <div class="ft-copyright">
-        <p>طراحی و پیاده سازی</p>
+        <p id="cr">تمام حقوق مادی و معنوی وبسایت متعلق به <b>آیوکارد</b> می باشد</p>
+        <p id="dev"> توسعه وبسایت: <span>ایکاسافت</span></p>
     </div>
+    <!-- End of Footer -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/script.js"></script>
 </body>
-
 </html>
+

@@ -1,0 +1,32 @@
+<mat-toolbar fxLayout="row" color="primary">
+
+  <div id="app-name" fxFlex="nogrow">
+
+  </div>
+  <div fxFlex="grow" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="15">
+
+    <button mat-icon-button (click)="openDialog()">
+      <mat-icon>settings_applications</mat-icon>
+    </button>
+
+    <button
+      class="iransans"
+    style="background-color:whitesmoke; color:blue"
+    fxFlex="nogrow"
+    mat-button
+  >
+    صفحه اصلی سایت
+  </button>
+  </div>
+
+
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="side"></mat-sidenav>
+  <mat-sidenav-content>
+    <div id="main-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

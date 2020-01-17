@@ -1,13 +1,21 @@
+body{
+    background-color: rgb(249, 249, 249);
+}
+
 .content{
        padding: 20px;
        direction: rtl;
        overflow: auto;
        clear: both;
+       margin:30px auto;
+       width: 74%;
+       background-color: white;
+       border-radius: 15px;
+       box-shadow: 1px 1px 5px lightgray; 
    }
    
    .sidebar{
        padding: 20px;
-       border-left: 1px solid rgb(230, 230, 230);
        float: right;
        direction: rtl;
        text-align: right;
@@ -20,6 +28,7 @@
        display: flex;
        flex-wrap: wrap;
        border-collapse: collapse;
+       border-right: 1px solid rgb(230, 230, 230);
    }
    
    
@@ -50,8 +59,16 @@
    .sidebar .cat-box a{
        display: block;
        padding: 10px;
-       border-bottom: 1px solid rgb(230, 230, 230);
+       border-radius: 10px;
        transition: background-color 0.25s;
+   }
+
+   .sidebar .cat-box a::before{
+       font-family: FontAwesome;
+       content: "\f137";
+       position: relative;
+       top: 2px;
+       margin-left: 5px;
    }
    
    .sidebar .cat-box a:hover{
@@ -63,14 +80,16 @@
        display: block;
        width: 100%;
        text-align: right;
-       margin: 20px 10px;
+       margin:0px 10px 20px 10px;
    }
    
    .products-box .product{
        display: block;
        width: 23.5%;
-       margin: 5px;
-       border: 1px solid rgb(230, 230, 230);
+       margin:10px 5px;
+       /*border: 1px solid rgb(230, 230, 230);*/
+       border-radius: 10px;
+       box-shadow: 1px 1px 5px lightgray;
        text-align: right;
        transition: opacity 0.5s;
    }
@@ -81,6 +100,7 @@
    
    .product img{
        width: 100%;
+       border-radius: 10px 10px 0 0;
    }
    
    .product-details{
@@ -126,6 +146,11 @@
    @media only screen and (max-width:900px){
        .content{
            direction: ltr;
+           width: 90%;
+       }
+
+       .products-box{
+           border-right: none;
        }
    }
    
@@ -138,7 +163,7 @@
        .products-box .product{
            display: block;
            width: 100% !important;
-           margin: 5px;
+           margin:30px 5px;
            border: 1px solid rgb(230, 230, 230);
            text-align: right;
            transition: opacity 0.5s;

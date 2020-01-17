@@ -1,0 +1,47 @@
+
+.card
+{
+  width:250px;
+  height: 150px;
+  // background: rgb(68,64,64);
+  // background: linear-gradient(90deg, rgba(68,64,64,0.8580474426098564) 0%, rgba(87,81,81,1) 35%, rgba(112,103,96,1) 100%);
+}
+
+
+
+.btn
+{
+  margin-top:13px;
+}
+
+.A
+{
+  background-color: #00b0f0;
+  color:white;
+  padding: 5px 30px;
+}
+
+.B
+{
+ background-color: #f5370c;
+ color:white;
+ padding: 5px 30px;
+}
+
+.mat-stroked-button
+{
+  padding: 5px 30px;
+  text-align: center;
+}
+
+.mat-stroked-button:hover
+{
+  background-color: whitesmoke;
+  color:black;
+}
+
+
+.mat-button-wrapper span
+{
+    text-align: top;
+}
