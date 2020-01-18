@@ -99,14 +99,12 @@ textarea.form-control{
     text-align: right;
 }
 
-
-
-
-
-
-
-
-   
+ #ways #map
+{
+    height: 300px;
+    width:100%;
+    position: relative;
+}
    @media only screen and (max-width:900px){
        .content{
            direction: ltr;

@@ -16,6 +16,36 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="js/blog.js"></script>
         <script src="js/header_footer.js"></script>
+
+
+
+
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKlRQam3EovOKZ6l8H2P0Q12s17Cy1Blo&callback=initMap">
+        </script>
+
+        <script>
+
+           
+            function initMap() {
+            var lat = parseFloat(32.427910);
+            var lng = parseFloat(53.688046);
+            var location = {lat:lat, lng:lng};
+            var map = new google.maps.Map(document.getElementById("map"), {
+          zoom:10,
+          center: location
+        });
+         var marker = new google.maps.Marker({
+             position: location,
+             map:map
+            });
+ 
+ }
+          </script>
+
+
+
+
+
     </head>
 
        <body>
@@ -61,14 +91,12 @@
                             </div>
                             <div id="ways">
                                 <h5>راه های ارتباطی</h5>
-                               
+                               <div id="map"></div>
 
-    <img src="images/map.png" alt="Workplace" usemap="#workmap" width="400" height="379">
 
-    <map name="workmap">
-      <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
-    </map>
-    
+                            
+                              
+    <!-- <img src="images/map.png" alt="Workplace" usemap="#workmap" width="400" height="379"> -->
                                 <p>
                                     <span>آدرس: </span>خیابان شریعتی پایین تر از پل صدر کوچه محمدی پلاک12 واحد 3
                                     </br>
