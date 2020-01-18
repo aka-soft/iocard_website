@@ -131,3 +131,16 @@ textarea.form-control{
            transition: opacity 0.5s;
        }
    }
+
+
+   @media only screen and (max-width:800px)
+   {
+    .contact-us{
+        padding:0;
+        display: block;
+    }
+
+    #ways p{
+        padding:0;
+    }
+   }
