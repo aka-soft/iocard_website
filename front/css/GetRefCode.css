@@ -1,0 +1,37 @@
+h4
+{
+       text-align: center;
+}
+.contian 
+{
+       display: flex;
+       width: 74%;
+       margin: 30px auto;
+       background-color: white;
+       direction: rtl;
+}
+
+
+.get-ref-code 
+{
+       display: flex;
+       margin-right:200px;
+}
+
+
+.get-ref-code h5 
+{
+       margin-left:60px;
+       color:#67d457;
+       margin-top: 3px;
+}
+
+.ref-code a 
+{
+       border-radius: 5px;
+       padding: 1px 20px;
+       background-color: green;
+       color:white;
+       font-size: 18px;
+       margin-bottom:50px;
+}

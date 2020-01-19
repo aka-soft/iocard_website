@@ -1,0 +1,41 @@
+h4
+{
+       text-align: center;
+}
+.contian 
+{
+       display: flex;
+       width: 74%;
+       margin: 30px auto;
+       background-color: white;
+       direction: rtl;
+}
+
+.amount h5
+{
+       text-align: center;
+       margin-left: 30px;
+}
+
+.amount
+{
+       display: flex;
+       margin-right: 190px;
+}
+
+.payment a
+{
+       border-radius: 8px;
+       padding: 6px 25px;
+       background-color: #67d457;
+       color:white;
+       font-size: 17px;
+       margin-top:70px;
+       margin-right: 210px;
+}
+
+.payment h5
+{
+       text-align: center;
+}
+
