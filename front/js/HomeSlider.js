@@ -74,7 +74,7 @@ $('document').ready(function(){
 
 
 $('document').ready(function(){
-       $('.slides2 a').hide();
+       $('.slides-box-2 a').hide();
        $('#S1').show();
        $('#C1').css('background-color',"rgb(0, 176, 240)");
 

@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'yekan';
+    src: url(fonts/Yekan/Yekan.eot);
+    src: url(fonts/Yekan/Yekan.eot?#iefix) format("embedded-opentype"), url(fonts/Yekan/Yekan.woff) format("woff"),
+    url(fonts/Yekan/Yekan.ttf) format("truetype"), url(fonts/Yekan/Yekan.svg#BYekan) format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Iranyekan';
+    src: url(fonts/IranYekan/eot/iranyekanwebregular.eot);
+    src: url(fonts/IranYekan/eot/iranyekanwebregular.eot) format("embedded-opentype"),
+    url(fonts/IranYekan/woff/iranyekanwebregular.woff) format("woff"),
+    url(fonts/IranYekan/ttf/iranyekanwebregular.ttf) format("truetype"),
+    url(fonts/IranYekan/svg/iranyekanwebregular.svg) format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin:0;
+    padding: 0;
+    font-family: Iranyekan;
+    direction: rtl;
+
+}
+body{
+
+}
+.rounded-7{
+   border-radius: 7px;
+}
+.show-order-btn{
+    cursor: pointer;
+}
+table{
+    text-align: center;
+
+}
+.table thead th{
+    font-weight: normal;
+    font-size: 13px !important;
+}
+.table tr td{
+    border:none;
+    font-size: 13px !important;
+}
+.table tr th{
+    border: none;
+}
+.table tr td{
+    padding:20px;
+}

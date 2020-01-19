@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Iocard</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="css/header_footer.css"/>
+    <link rel="stylesheet" type="text/css" href="css/UserPanel.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="js/header.js"></script>
+    <link rel="stylesheet" href="css/order.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/order.js"></script>
+</head>
+<body>
+<header>
+    <h5>پنل کاربری آیوکارد</h5>
+    <div>
+        <a href="#" class="logout-button">خروج از حساب</a>
+        <a href="#" class="back-to-website-button">بازگشت به وبسایت اصلی</a>
+    </div>
+</header>
+<div class="content">
+    <div class="sidebar">
+        <div class="design-ppic-backg">
+            <div class="ppic"><img src="images/user.png" alt="user-pic"/></div>
+        </div>
+        <ul class="menu">
+            <li><a href="#">پیشخوان</a></li>
+            <li><a href="#">آخرین سفارشات</a></li>
+            <li id="dd-item"><a href="#">پشتیبانی</a>
+                <div class="drop-down-box">
+                    <a href="#">ثبت تیکت</a>
+                    <a href="#">تیکت های من</a>
+                </div>
+            </li>
+            <li id="partner"><a href="#">همکار شو</a></li>
+            <li><a href="#">دریافت کد معرف</a></li>
+            <li><a href="#">سفارشات ثبت شده با کد شما</a></li>
+            <li><a href="#">ویرایش اطلاعات کاربری</a></li>
+        </ul>
+    </div>
+    <div class="inner-content">
+        <table class="table border rounded-7 overflow-hidden shadow">
+            <thead>
+            <tr class="bg-secondary text-light ">
+                <th scope="col">شماره سفارش</th>
+                <th scope="col">اطلاعات کاربری سفارش</th>
+                <th scope="col">اطلاعات تحویل</th>
+                <th scope="col">نام محصول</th>
+                <th scope="col">ضمانت تعویض</th>
+                <th scope="col">قیمت</th>
+                <th scope="col">وضعیت</th>
+                <th scope="col">تاریخ</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row " class="text-secondary">1</th>
+                <td class="text-primary show-order-btn" data-toggle="modal" data-target="#exampleModalCenter">
+                    مشاهده/ویرایش
+                </td>
+                <td class="text-primary show-order-btn" data-toggle="modal" data-target="#exampleModalCenter">
+                    مشاهده/ویرایش
+                </td>
+                <td class="text-secondary ">کارت شماره 1</td>
+                <td class=" text-success ">دارد</td>
+                <td class=" text-secondary ">1200000</td>
+                <td class=" text-warning ">پرداخت شده</td>
+                <td class=" text-secondary ">1392/8/6</td>
+            </tr>
+            <tr>
+                <th scope="row " class="text-secondary">1</th>
+                <td class="text-primary show-order-btn" data-toggle="modal" data-target="#exampleModalCenter">
+                    مشاهده/ویرایش
+                </td>
+                <td class="text-primary show-order-btn" data-toggle="modal" data-target="#exampleModalCenter">
+                    مشاهده/ویرایش
+                </td>
+                <td class="text-secondary ">کارت شماره 1</td>
+                <td class=" text-success ">دارد</td>
+                <td class=" text-secondary ">1200000</td>
+                <td class=" text-warning ">پرداخت شده</td>
+                <td class=" text-secondary ">1392/8/6</td>
+            </tr>
+            <tr class="border-0">
+                <th scope="row " class="text-secondary">1</th>
+                <td class="text-primary show-order-btn" data-toggle="modal" data-target="#exampleModalCenter">مشاهده/ویرایش</td>
+                <td class="text-primary show-order-btn" data-toggle="modal" data-target="#exampleModalCenter">مشاهده/ویرایش</td>
+                <td class="text-secondary ">کارت شماره 1</td>
+                <td class=" text-danger ">ندارد</td>
+                <td class=" text-secondary ">1200000</td>
+                <td class=" text-danger ">پرداخت نشده</td>
+                <td class=" text-secondary ">1392/8/6</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg  modal-dialog-centered" role="document">
+            <div class="modal-content w-100">
+                <div class="modal-header border-0">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row text-right">
+                        <div class="col-lg-12"><p class="pr-3 pl-3 p-3 bg-light font-13  border rounded-7 font-weight-light">نام نام خانوادگی:مهدی رضایی</p></div>
+                        <div class="col-lg-6"><p class="pr-3 pl-3 p-3 bg-light font-13  border rounded-7 font-weight-light">شماره تلفن:32324244224</p></div>
+                        <div class="col-lg-6">
+                            <p class="pr-3 p-3  pl-3 bg-light font-13  border rounded-7 font-weight-light">شماره موبایل:3323424</p>
+                        </div>
+                        <div class="col-lg-6"><p
+                                class="pr-3 p-3 pl-3 bg-light font-13  border rounded-7 font-weight-light ">تهران:شهر</p>
+
+                        </div>
+                        <div class="col-lg-6  ">
+                            <p class="pr-3 p-3 pl-3 bg-light font-13  border rounded-7 font-weight-light ">کد پستی:3443535</p>
+
+
+                        </div>
+                        <div class="col-lg-12 "><p class="w-100 mb-1">آدرس</p>
+                            <p class="p-3 bg-light font-13  border rounded-7 font-weight-light">لورم ایپسوم یک متن
+                                ساختگی هست که در تولید محتوا استفاده میشود</p></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

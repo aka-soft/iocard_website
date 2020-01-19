@@ -1,76 +1,89 @@
-                     <!DOCTYPE html>
-                     <html>
-                            <head>
-                                   <meta charset="utf-8">
-                                   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-                                   <title>Iocard</title>
-                                   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
-                                   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-                                   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-                                   <link rel="stylesheet" type="text/css" href="css/header_footer.css" />
-                                   <link rel="stylesheet" type="text/css" href="css/UserPanel.css"/>
-                                   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-                                   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-                                   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-                                   <script src="js/blog.js"></script>
-                                   <script src="js/header.js"></script>
-                            </head>
-                            <body>
-                                   <header class="hd-box">
-                                          <div class="navopener"><i class="fa fa-bars"></i></div>
-                                                  <a href="#" class="logo"><img src="images/logo.png" alt="logo" /></a>
-                                          <nav>
-                                          
-                                          
-                            
-                                          </nav>
-                            
-                                          <div class="hd-options">
-                                   
-                                                  <li><a class="card" href="#">صفحه اصلی سایت</a></li>
-                                          </div>
-                                   </header>
-
-                                   <!-- content -->
-
-
-                                   <div class="comments-box">
-                                          <div class="writer">
-                                          
-                                                 <form action="#">
-                                                 </form>
-
-                                          <div class="comment">
-                                                 <div class="title">
-                                                        <h5>آخرین تیکت های پشتیانی</h5>   
-                                                 </div>
-
-                                                 <div class="content">
-                                                        <h6>ایراد در ورود به پنل</h6>
-                                                 </div>
-                                          </div>
-
-                                          <div class="comment">
-                                          <div class="head">
-                                                 <h5>آخرین سفارشات</h5>   
-                                          </div>
-
-                                          <div class="content">
-                                                 <h6>کارت ویزیت شخصی</h6>
-                                          </div>
-                                    </div>
-                                   <div class="comment reply">
-                                          <div class="header">
-                                                 <h5>اطلاعات کاربری</h5>
-                                          </div>
-
-                                          <div class="content">
-                                                 <h6>شماره معرف</h6>
-                                          </div>
-                                   </div>
-                             </div> 
-                      </div>   
-              </div>                                  
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Iocard</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="css/header_footer.css"/>
+    <link rel="stylesheet" type="text/css" href="css/UserPanel.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="js/header.js"></script>
+</head>
+<body>
+<header>
+    <h5>پنل کاربری آیوکارد</h5>
+    <div>
+        <a href="#" class="logout-button">خروج از حساب</a>
+        <a href="#" class="back-to-website-button">بازگشت به وبسایت اصلی</a>
+    </div>
+</header>
+<div class="content">
+    <div class="sidebar">
+        <div class="design-ppic-backg">
+            <div class="ppic"><img src="images/user.png" alt="user-pic"/></div>
         </div>
-                     </body>
-                     </html>
+        <ul class="menu">
+            <li><a href="#">پیشخوان</a></li>
+            <li><a href="#">آخرین سفارشات</a></li>
+            <li id="dd-item"><a href="#">پشتیبانی</a>
+                <div class="drop-down-box">
+                    <a href="#">ثبت تیکت</a>
+                    <a href="#">تیکت های من</a>
+                </div>
+            </li>
+            <li id="partner"><a href="#">همکار شو</a></li>
+            <li><a href="#">دریافت کد معرف</a></li>
+            <li><a href="#">سفارشات ثبت شده با کد شما</a></li>
+            <li><a href="#">ویرایش اطلاعات کاربری</a></li>
+        </ul>
+    </div>
+    <div class="inner-content">
+        <div class="row">
+            <div class="col-lg-6 ">
+                <div class="right-box">
+                    <div class="title-wrapper align-items-center bg-warning d-flex pr-4 pl-4 justify-content-between">
+                        <h4 class="text-light m-0">آخرین سفارشات</h4>
+                        <div class="title-count d-flex align-items-center justify-content-center">
+                            <p class=" m-0 text-warning">1</p>
+                        </div>
+                    </div>
+                    <div class="item d-flex justify-content-between align-items-center pr-4 pl-4 mt-2">
+                        <p class="item-title">کارت ویزیت شخصی</p>
+                        <p class="item-date bg-light ">2019/10/11</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="right-box">
+                    <div class="title-wrapper align-items-center bg-success d-flex pr-4 pl-4 justify-content-between">
+                        <h4 class="text-light m-0">آخرین تیکت های پشتیبانی</h4>
+                        <div class="title-count d-flex align-items-center justify-content-center">
+                            <p class=" m-0 text-warning">1</p>
+                        </div>
+                    </div>
+                    <div class="item d-flex justify-content-between align-items-center pr-4 pl-4 mt-2">
+                        <p class="ticket-title">ایراد در ورود به پنل</p>
+                        <p class="ticket-status  ">در انتظار پاسخ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="right-box mt-4">
+                    <div class="title-wrapper align-items-center bg-primary d-flex pr-4 pl-4 justify-content-between">
+                        <h4 class="text-light m-0">اطلاعات کاربری</h4>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
