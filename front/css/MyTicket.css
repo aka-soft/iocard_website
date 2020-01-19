@@ -18,3 +18,13 @@ h4
 {
        padding: 4.25rem;
 }
+
+label 
+{
+       float: right;
+}
+
+.card-header 
+{
+       text-align: right;
+}

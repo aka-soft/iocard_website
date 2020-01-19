@@ -66,21 +66,21 @@
                                    <div class="card-body"></div>
                                  </div>
 
-                            <form>
+                            <form action="/">
                                    <div class="form-group">
-                                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="موضوع تیکت">
+                                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="موضوع تیکت" name="Subject">
                                    </div>
 
                                    <div class="form-group">
-                                          <textarea class="form-control " id="exampleFormControlTextarea1" rows="9" placeholder="متن تیکت..."></textarea>
+                                          <textarea class="form-control " id="exampleFormControlTextarea1" rows="9" placeholder="متن تیکت..." name="SubjectText"></textarea>
                                    </div>
 
 
                                    <div>
-                                          <form>
+                                          <form action="/" enctype="multipart/form-data">
                                                  <div class="form-group">
                                                         <label>انتخاب عکس</label>
-                                                   <input type="file" class="form-control-file" id="exampleFormControlFile1" placeholder="انتخاب عکس">
+                                                   <input type="file" class="form-control-file" id="exampleFormControlFile1" placeholder="انتخاب عکس" name="UploadImage">
                                                  </div>
                                                </form>
                                    </div>
